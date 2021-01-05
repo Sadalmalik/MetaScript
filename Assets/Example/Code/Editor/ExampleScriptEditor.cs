@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(ExampleScript))]
-public class MetaScriptEditor : Editor
+public class ExampleScriptEditor : Editor
 {
 	private ExampleScript _script;
 

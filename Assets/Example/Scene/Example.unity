@@ -169,6 +169,6 @@ MonoBehaviour:
       Action 1","__type":"ActionNode"},{"actionDescription":"Some Action 2","__type":"ActionNode"},{"condition":"Some
       Condition","nodes":[{"note":"Conditional block here","__type":"CommentNode"},{"actionDescription":"Some
       Action","__type":"ActionNode"},{"actionDescription":"Some Action","__type":"ActionNode"},{"note":"This
-      is unimplemented node:","__type":"CommentNode"},{"__type":"UnimplementedNode"}],"__type":"IfNode"},{"actionDescription":"Some
+      is unimplemented node:","__type":"CommentNode"},{"__type":"UnimplementedNode"}],"__type":"IfNode"},{"actionDescription":null,"__type":"ActionNode"},{"actionDescription":"Some
       Action 3","__type":"ActionNode"},{"note":"Check Container field in this script.\n\nIt
       contains all this data in json format.","__type":"CommentNode"}]'

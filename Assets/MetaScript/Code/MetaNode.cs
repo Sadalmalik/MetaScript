@@ -36,6 +36,7 @@ public class MetaNode
 			{
 				var node = (T)Activator.CreateInstance(type);
 				nodes.Add(node);
+				GUI.changed = true;
 			}
 			
 			MetaNodeContextMenu.ShowContextMenu<MetaNode>(AddItem);
