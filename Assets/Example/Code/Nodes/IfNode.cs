@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using MetaScrip;
 
 // Editor setup
 #if UNITY_EDITOR

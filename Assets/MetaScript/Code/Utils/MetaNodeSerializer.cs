@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
+namespace MetaScrip
+{
 public class JsonMetaNodeConverter : Newtonsoft.Json.Converters.CustomCreationConverter<MetaNode>
 {
 	private static JsonMetaNodeConverter _instance;
@@ -65,4 +67,5 @@ public class JsonMetaNodeConverter : Newtonsoft.Json.Converters.CustomCreationCo
 
 		return target;
 	}
+}
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+namespace MetaScrip
+{
 public static class ReflectionUtils
 {
 	public static List<Type> GetAllSubtypes<T>()
@@ -24,4 +26,5 @@ public static class ReflectionUtils
 		
 		return types;
 	}
+}
 }

@@ -10,6 +10,8 @@ using UnityEditor;
 // ReSharper disable MemberCanBePrivate.Global
 #endif
 
+namespace MetaScrip
+{
 [Serializable]
 public class MetaNode
 {
@@ -44,4 +46,5 @@ public class MetaNode
 		EditorGUILayout.EndHorizontal();
 	}
 #endif
+}
 }

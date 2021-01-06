@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+namespace MetaScrip
+{
 public static class MetaNodeContextMenu
 {
 	private static readonly List<string> _tempPath = new List<string>();
@@ -41,4 +43,5 @@ public static class MetaNodeContextMenu
 		}
 		menu.ShowAsContext();
 	}
+}
 }

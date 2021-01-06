@@ -5,6 +5,8 @@ using UnityEngine;
 
 // ReSharper disable MemberCanBePrivate.Global
 
+namespace MetaScrip
+{
 [Serializable]
 public class MetaContainer
 {
@@ -54,4 +56,5 @@ public class MetaContainer
 		MetaNode.DrawMetaList(nodes);
 	}
 #endif
+}
 }

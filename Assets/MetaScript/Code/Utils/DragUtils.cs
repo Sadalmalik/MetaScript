@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+namespace MetaScrip
+{
 public class CustomDragData<T>
 {
 	public List<T> list;
@@ -179,4 +181,5 @@ public class CustomGUI
 	{
 		return GUILayout.Button("X", width, height);
 	}
+}
 }
