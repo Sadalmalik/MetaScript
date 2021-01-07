@@ -5,43 +5,45 @@ using UnityEngine;
 
 namespace MetaScrip
 {
-public static class MetaNodeContextMenu
-{
-	private static readonly List<string> _tempPath = new List<string>();
-	
-	public static void ShowContextMenu<T>(Action<Type> selectCallback) where T : MetaNode
+	public static class MetaNodeContextMenu
 	{
-		JsonMetaNodeConverter.instance.RefreshTypes();
-		
-		var baseType = typeof(T);
-		var types = JsonMetaNodeConverter.instance.MetaTypes;
-		
-		GenericMenu menu = new GenericMenu();
+		private static readonly List<string> _tempPath = new List<string>();
 
-		foreach (var pair in types)
+		public static void ShowContextMenu<T>(Action<Type> selectCallback) where T : MetaNode
 		{
-			var meta = pair.Value;
-			if (meta==baseType)
-				continue;
-			
-			_tempPath.Clear();
-			while (meta!=baseType)
+			JsonMetaNodeConverter.instance.RefreshTypes();
+
+			var baseType = typeof(T);
+			var types    = JsonMetaNodeConverter.instance.MetaTypes;
+
+			GenericMenu menu = new GenericMenu();
+
+			foreach (var pair in types)
 			{
-				_tempPath.Add(meta.Name);
-				meta = meta.BaseType;
+				var meta = pair.Value;
+				if (meta == baseType)
+					continue;
+
+				_tempPath.Clear();
+				while (meta != baseType)
+				{
+					_tempPath.Add(meta.Name);
+					meta = meta.BaseType;
+				}
+
+				_tempPath.Reverse();
+
+				var path = string.Join("/", _tempPath);
+				Debug.Log($"Add menuitem {path}");
+
+				menu.AddItem(
+					new GUIContent(path),
+					false,
+					t => selectCallback?.Invoke((Type) t),
+					pair.Value);
 			}
-			_tempPath.Reverse();
-			
-			var path = string.Join("/", _tempPath);
-			Debug.Log($"Add menuitem {path}");
-			
-			menu.AddItem(
-				new GUIContent(path),
-				false,
-				t => selectCallback?.Invoke((Type)t),
-				pair.Value);
+
+			menu.ShowAsContext();
 		}
-		menu.ShowAsContext();
 	}
-}
 }
